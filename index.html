@@ -203,7 +203,7 @@
           <div class="image-wrap-2">
             <div class="image-info">
               <h5 class="mb-3 text-white font-weight-bold">Literatura III IB</h5>
-              <button class="btn btn-link btn-outline-white py-2 w-100" onclick="showMessage()" target="_blank">INFO</button>
+              <button type="button" class="btn btn-link btn-outline-white py-2 w-100" data-toggle="modal" data-target="#ibModal" >INFO </button>
               <br>
             </div>
             <img src="images/LOGO_IB.jpeg" alt="Image" class="img-fluid">
@@ -214,7 +214,7 @@
           <div class="image-wrap-2">
             <div class="image-info">
               <h5 class="mb-3 text-white font-weight-bold">Informática IV IB/ Teatro IV IB</h5>
-              <button class="btn btn-link btn-outline-white py-2 w-100" onclick="showMessage()" target="_blank">INFO</button>
+              <button type="button" class="btn btn-link btn-outline-white py-2 w-100" data-toggle="modal" data-target="#ibModal" >INFO </button>
               <br>
             </div>
             <img src="images/LOGO_IB.jpeg" alt="Image" class="img-fluid">
@@ -255,6 +255,28 @@
         </div>
       </div>
     </div>
+
+
+        <!--   MODAL   -->
+        <div class="modal fade" id="ibModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <!--h4 class="modal-title" id="exampleModalLabel">New message</h4-->
+              </div>
+              <div class="modal-body">
+                <form>
+                  <div class="embed-responsive embed-responsive-1by1">
+                    <p class="text-inside"></p>
+                  </div>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+              </div>
+            </div>
+          </div>
+        </div>
     
 
     
@@ -286,7 +308,7 @@
     });
 
 
-    $('#exampleModal').on('show.bs.modal', function (event) {
+    $('#exampleModal').on('show.bs.modal', function(event) {
   var button = $(event.relatedTarget) // Button that triggered the modal
   var recipient = button.data('whatever') // Extract info from data-* attributes
   // If necessary, you could initiate an AJAX request here (and then do the updating in a callback).
@@ -296,8 +318,23 @@
   modal.find('.modal-body iframe').attr("src", recipient)
 })
 
-$("#exampleModal").on('hidden.bs.modal', function (e) {
+$("#exampleModal").on('hidden.bs.modal', (e) => {
     $("#exampleModal iframe").attr("src", $("#exampleModal iframe").attr("src"));
+
+
+});
+
+$('#ibModal').on('show.bs.modal', function(event) {
+  var button = $(event.relatedTarget) // Button that triggered the modal
+  var modal = $(this)
+  modal.find('.modal-header').text("IMPORTANTE")
+  modal.find('.modal-body').text("Si actualmente estas cursando Informática de IB,/Teatro de IB  estas son equivalentes a tu Optativa I")
+})
+
+$("#ibModal").on('hidden.bs.modal', (e) => {
+    $("#exampleModal text-inside").attr("src", $("#exampleModal iframe").attr("src"));
+
+
 });
   </script>
 
