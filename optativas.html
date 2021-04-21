@@ -78,7 +78,7 @@
                   </ul>
                 </li-->
                 <li  class="active"><a href="optativas.html">Optativas</a></li>
-                <li><a href="elegir.html">Detalles</a></li>
+                <li><a href="elegir.html">Elige tus materias</a></li>
                 <!--li><a href="contact.html">Contact</a></li-->
               </ul>
             </nav>
@@ -224,6 +224,19 @@
           <a class="btn btn-black btn-link btn-outline-white py-2 w-100 image-wrap-2" href="https://www.youtube.com/watch?v=yjFEISQgx7A" target="_blank">Ver Video</a>
         </div>
 
+        <div class="col-lg-4 border border-dark">
+          <div class="image-wrap-2 text-center">
+            <div class="image-info">
+            </div>
+            <img src="images/LOGO_IB.jpeg" alt="Image" class="img-fluid fit-image">
+          </div>
+          <h5 class="mb-3 text-black text-center font-weight-bold">Informática IV IB/ Teatro IV IB</h5>
+          <h6 class="text-center text-blue font-weight-bold">IB</h6>
+          <!--h6 class="text-center text-blue font-weight-bold">3 hrs por semana</h6--> 
+          <button type="button" class="btn btn-black btn-link btn-outline-white py-2 w-100 image-wrap-2 image-info" data-toggle="modal" data-target="#ibModal" >INFO </button>
+        </div>
+
+
       </div>
     </div>
 
@@ -255,6 +268,28 @@
         </div>
       </div>
     </div>
+
+
+        <!--   MODAL   -->
+        <div class="modal fade" id="ibModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <!--h4 class="modal-title" id="exampleModalLabel">New message</h4-->
+              </div>
+              <div class="modal-body">
+                <form>
+                  <div class="embed-responsive embed-responsive-1by1">
+                    <p class="text-inside"></p>
+                  </div>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+              </div>
+            </div>
+          </div>
+        </div>
     
 
     
@@ -286,7 +321,7 @@
     });
 
 
-    $('#exampleModal').on('show.bs.modal', function (event) {
+    $('#exampleModal').on('show.bs.modal', function(event) {
   var button = $(event.relatedTarget) // Button that triggered the modal
   var recipient = button.data('whatever') // Extract info from data-* attributes
   // If necessary, you could initiate an AJAX request here (and then do the updating in a callback).
@@ -296,8 +331,23 @@
   modal.find('.modal-body iframe').attr("src", recipient)
 })
 
-$("#exampleModal").on('hidden.bs.modal', function (e) {
+$("#exampleModal").on('hidden.bs.modal', (e) => {
     $("#exampleModal iframe").attr("src", $("#exampleModal iframe").attr("src"));
+
+
+});
+
+$('#ibModal').on('show.bs.modal', function(event) {
+  var button = $(event.relatedTarget) // Button that triggered the modal
+  var modal = $(this)
+  modal.find('.modal-header').text("IMPORTANTE")
+  modal.find('.modal-body').text("Si actualmente estas cursando Informática de IB,/Teatro de IB  estas son equivalentes a tu Optativa I")
+})
+
+$("#ibModal").on('hidden.bs.modal', (e) => {
+    $("#exampleModal text-inside").attr("src", $("#exampleModal iframe").attr("src"));
+
+
 });
   </script>
 
