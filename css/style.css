@@ -1144,12 +1144,27 @@ a {
     background: #fff;
     color: #000; }
 
+    
+.fillNegociosDigitales {
+  height: 35px;
+}
+
+.special-image {
+  min-height: 310px;
+}
+
+.fit-image{
+  object-fit: cover;
+  max-height: 310px;
+  }
+
 .image-wrap-2 {
   display: block;
   overflow: hidden;
   top: 0;
   left: 0;
-  margin-bottom: 30px; }
+  margin-bottom: 30px; 
+}
   .image-wrap-2:before {
     position: absolute;
     content: "";
