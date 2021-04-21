@@ -22,11 +22,11 @@ a {
     text-decoration: none; }
 
 .text-black {
-  color: #000; 
+  color: #000 !important; 
 }
 
 .text-blue {
-color: rgba(37, 25, 121, 1);
+color: rgba(1, 30, 240, 1);
 }
 
 .bg-black {
